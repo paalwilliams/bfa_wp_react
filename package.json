@@ -1,0 +1,48 @@
+{
+  "name": "special_effects",
+  "version": "1.0.0",
+  "description": "=== BlankSlate ===",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "start": "wp-scripts start",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js",
+    "sass": "gulp sass:watch",
+    "gulp": "gulp sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paalwilliams/special_effects_wp_theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paalwilliams/special_effects_wp_theme/issues"
+  },
+  "homepage": "https://github.com/paalwilliams/special_effects_wp_theme#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^13.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "jquery": "^3.5.1",
+    "postcss": "^8.2.5",
+    "react": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5"
+  },
+  "browserslist": [
+    "last 100 versions"
+  ]
+}
