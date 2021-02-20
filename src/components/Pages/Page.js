@@ -2,25 +2,21 @@ const { react, useEffect, useContext } = wp.element;
 import {useParams} from "react-router-dom";
 import PostContext from '../../context/posts/postContext';
 
-export const Post = () => {
-
+const Page = () => {
+    const {page} = useParams()
     const postContext = useContext(PostContext);
 
-    const { getSinglePost, state } = postContext;
-
-    const {slug} = useParams()
+    const { getSinglePage, state } = postContext;
 
     useEffect(() => {
-        getSinglePost(slug);
+        getSinglePage(page);
     }, [])
 
     return (
         <div>
-            <div className="post">
-                <h2>title</h2>
-        </div>
+            {page}
         </div>
     )
 }
 
-export default Post
+export default Page

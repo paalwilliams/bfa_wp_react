@@ -1,5 +1,10 @@
-<?php get_header(); ?>
-<main id="content-root">
-</main>
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=device-width" />
+<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+<main id="content-root"></main>
+<?php wp_footer(); ?>

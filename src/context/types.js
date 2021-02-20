@@ -1,22 +1,7 @@
-export const CLEAR_FILTER = 'CLEAR_FILTER';
-export const CONTACT_ERROR = 'CONTACT_ERROR';
-export const SET_ALERT = 'SET_ALERT';
-export const REMOVE_ALERT = 'REMOVE_ALERT';
 
-// USER_REGISTER
-export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
-export const REGISTER_FAIL = 'REGISTER_FAIL';
-export const USER_LOADED = 'USER_LOADED';
-
-// AUTH TYPES
-export const AUTH_ERROR = 'AUTH_ERROR';
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-export const LOGIN_FAIL = 'LOGIN_FAIL';
-export const LOGOUT = 'LOGOUT';
-export const CLEAR_ERRORS = 'CLEAR_ERRORS';
-
-// COLLECTION TYPES
-
-export const ADD_COLLECTION_ITEM = 'ADD_COLLECTION_ITEM';
-export const UPDATE_COLLECTION_STATE = 'UPDATE_COLLECTION_STATE';
-export const GET_COLLECTION_ITEMS = 'GET_COLLECTION_ITEMS';
+export const GET_POSTS = 'GET_POSTS';
+export const GET_MENU = 'GET_MENU';
+export const GET_SINGLE_PAGE = 'GET_SINGLE_PAGE';
+export const GET_SINGLE_POST = 'GET_SINGLE_POST';
+export const ERROR = 'ERROR';
+export const GET_SITE_IDENTITY = 'GET_SITE_IDENTITY';

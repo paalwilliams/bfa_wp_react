@@ -1,16 +1,10 @@
-import React, {useEffect} from 'react'
-
-const Logo = () => {
-    useEffect(() => {
-        fetch('/wp-json/')
-            .then( response => response.json() )
-            .then( data => {
-                console.log(data)
-            } )
-    }, [])
+const Logo = (props) => {
+    const {name} = props;
     return (
         <div>
-            <h1>paaaal</h1>
+            <h1>
+                {name}
+            </h1>
         </div>
     )
 }
