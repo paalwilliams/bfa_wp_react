@@ -1,11 +1,11 @@
 const { React } = wp.element
 
-const Contact = () => {
+const Home = () => {
   return (
         <div>
-            Contact Page
+            Home Page city
         </div>
   )
 }
 
-export default Contact
+export default Home

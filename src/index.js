@@ -1,21 +1,17 @@
-const { render} = wp.element;
-import React from 'react';
+import React from 'react'
 import Header from './components/Header/Header'
-import PostState from './context/posts/PostState';
-import {BrowserRouter as Router, Switch, Route, useHistory } from 'react-router-dom'
+import PostState from './context/posts/PostState'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Posts from './components/Posts/Posts'
 import Post from './components/Posts/Post'
 import Contact from './components/Pages/Contact'
 import Page from './components/Pages/Page'
+import NotFound from './components/Utils/NotFound'
+import Home from './components/Pages/Home'
+const { render } = wp.element
 
 const Index = () => {
-
-    let history = useHistory();
-
-    window.onbeforeunload = function() {
-        localStorage.setItem('last', 'dog')
-    }
-    return (
+  return (
         <>
         <Router>
              <PostState>
@@ -25,11 +21,13 @@ const Index = () => {
                             <Route exact path="/blog/:slug" component={Post}/>
                             <Route path="/blog" component={Posts}/>
                             <Route path="/:page" component={Page}/>
+                            <Route exact path="/" component={Home}/>bn
+                            <Route component={NotFound} />
                         </Switch>
             </PostState>
-        </Router> 
+        </Router>
         </>
-    )
+  )
 }
 
-render(<Index />, document.getElementById('content-root'));
+render(<Index />, document.getElementById('content-root'))

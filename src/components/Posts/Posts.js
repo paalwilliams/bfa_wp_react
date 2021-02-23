@@ -1,26 +1,27 @@
-const { react, useEffect, useContext } = wp.element;
 import PostContext from '../../context/posts/postContext'
-import PostExcerpt from './PostExcerpt';
+import PostExcerpt from './PostExcerpt'
 import Error from '../Utils/Error'
+const { React, useEffect, useContext } = wp.element
 
 export const Posts = () => {
+  const postContext = useContext(PostContext)
 
-    const postContext = useContext(PostContext);
+  const { getPosts, state } = postContext
 
-    const { getPosts, state } = postContext;
+  useEffect(() => {
+    getPosts()
+  }, [])
 
-    useEffect(() => {
-        getPosts()
-    }, [])
-
-    return (
+  return (
         <div className="posts-container">
             {state.err ? <Error msg={state.err}/> : ''}
-            {state.posts ? state.posts.map((post) => {
-                return <PostExcerpt content={post} />
-            }) : ''}
+            {state.posts
+              ? state.posts.map((post) => {
+                return <PostExcerpt key={post} content={post} />
+              })
+              : ''}
         </div>
-    )
+  )
 }
 
 export default Posts

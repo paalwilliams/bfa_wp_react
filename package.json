@@ -37,6 +37,7 @@
     "gulp-sass": "^4.1.0",
     "jquery": "^3.5.1",
     "postcss": "^8.2.5",
+    "prettier-eslint": "^12.0.0",
     "react": "^17.0.1",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",

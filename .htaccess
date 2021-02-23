@@ -3,7 +3,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/wp-admin
 RewriteCond %{REQUEST_URI} !^/wp-json
-RewriteRule ^ / [R=301,L]
+RewriteRule ^ /index.php [R=301,L]
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
