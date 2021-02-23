@@ -7,6 +7,7 @@ const { React, useEffect, useContext } = wp.element
 const Page = () => {
   const { page } = useParams()
   const postContext = useContext(PostContext)
+  console.log(page)
 
   const { getSinglePage, state } = postContext
 
