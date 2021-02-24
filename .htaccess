@@ -1,15 +1,6 @@
-<IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/wp-admin
-RewriteCond %{REQUEST_URI} !^/wp-json
-RewriteCond %{REQUEST_URI} !^/blog/
-RewriteRule ^ /index.php [L]
-
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
-</IfModule>

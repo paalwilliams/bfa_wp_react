@@ -21,7 +21,7 @@ const Index = () => {
                             <Route path="/blog/:slug" component={Post}/>
                             <Route path="/blog" component={Posts}/>
                             <Route path="/:page" component={Page}/>
-                            <Route exact path="/" component={Home}/>bn
+                            <Route exact path="/" component={Home}/>
                             <Route component={NotFound} />
                         </Switch>
             </PostState>

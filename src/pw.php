@@ -15,4 +15,6 @@ add_action( 'rest_api_init', function () {
 
 add_filter( 'use_block_editor_for_post', '__return_false', 10 );
 
+remove_filter('template_redirect', 'redirect_canonical');
+
 ?>
