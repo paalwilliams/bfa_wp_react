@@ -4,30 +4,29 @@ import PostState from './context/posts/PostState'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Posts from './components/Posts/Posts'
 import Post from './components/Posts/Post'
-import Contact from './components/Pages/Contact'
 import Page from './components/Pages/Page'
 import NotFound from './components/Utils/NotFound'
-import Home from './components/Pages/Home'
+import Footer from './components/Footer/Footer';
 const { render } = wp.element
 
 const Index = () => {
-  return (
+    return (
         <>
-        <Router>
-             <PostState>
+            <Router>
+                <PostState>
                     <Header />
-                        <Switch>
-                            <Route path="/contact" component={Contact}/>
-                            <Route path="/blog/:slug" component={Post}/>
-                            <Route path="/blog" component={Posts}/>
-                            <Route path="/:page" component={Page}/>
-                            <Route exact path="/" component={Home}/>
-                            <Route component={NotFound} />
-                        </Switch>
-            </PostState>
-        </Router>
+                    <Switch>
+                        <Route path="/blog/:slug" component={Post} />
+                        <Route path="/blog" component={Posts} />
+                        <Route path="/:page" component={(props) => <Page key={window.location.pathname} />} />
+                        <Route path="/" component={(props) => <Page key={"home"} />} />
+                        <Route component={NotFound} />
+                    </Switch>
+                </PostState>
+            </Router>
+            <Footer />
         </>
-  )
+    )
 }
 
 render(<Index />, document.getElementById('content-root'))

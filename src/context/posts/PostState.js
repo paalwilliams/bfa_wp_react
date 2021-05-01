@@ -45,7 +45,6 @@ const PostState = (props) => {
     fetch(`/wp-json/wp/v2/pages?slug=${slug}`)
       .then(response => response.json())
       .catch(err => {
-        console.log(err)
         dispatch({
           type: ERROR,
           payload: {
@@ -54,7 +53,6 @@ const PostState = (props) => {
         })
       })
       .then(data => {
-        console.log(data)
         dispatch({
           type: GET_SINGLE_PAGE,
           payload: {
@@ -108,6 +106,30 @@ const PostState = (props) => {
       })
   }
 
+  const getFrontPage = () => {
+      fetch('/wp-json/wp/v2/frontpage')
+      .then((response) => {
+          return response.json()
+      })
+      .catch((err) => {
+          console.log(err)
+          dispatch({
+              type: ERROR,
+              payload: {
+                  err: "error retrieving home page."
+              }
+          })
+      }).then((data) => {
+          console.log(data)
+          dispatch({
+            type: GET_SINGLE_PAGE,
+            payload: {
+              page: data
+            }
+          })
+      })
+  }
+
   const getMenu = () => {
     fetch('/wp-json/wp/v2/menu')
       .then(response => response.json())
@@ -138,7 +160,8 @@ const PostState = (props) => {
         getSinglePage,
         getSinglePost,
         getMenu,
-        getSiteIdentity
+        getSiteIdentity,
+        getFrontPage
       }}
     >
       {/* eslint-disable-next-line react/prop-types */}

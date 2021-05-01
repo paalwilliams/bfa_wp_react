@@ -1,5 +1,13 @@
+@font-face { 
+    font-family: "Martin"; 
+    src: url(/wp-content/themes/blankslate/src/fonts/martin/MARTIN-Regular.ttf); 
+    font-weight: normal; 
+    }
+
+
 h1 {
     font-size: 2rem;
+    font-family: Martin;
 }
 h2 {
     font-size: 1.8rem;
