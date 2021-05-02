@@ -11,21 +11,23 @@ const { render } = wp.element
 
 const Index = () => {
     return (
-        <>
-            <Router>
-                <PostState>
-                    <Header />
-                    <Switch>
-                        <Route path="/blog/:slug" component={Post} />
-                        <Route path="/blog" component={Posts} />
-                        <Route path="/:page" component={(props) => <Page key={window.location.pathname} />} />
-                        <Route path="/" component={(props) => <Page key={"home"} />} />
-                        <Route component={NotFound} />
-                    </Switch>
-                </PostState>
-            </Router>
+        <div id="page-container">
+            <div id="content-wrap">
+                <Router>
+                    <PostState>
+                        <Header />
+                        <Switch>
+                            <Route path="/blog/:slug" component={Post} />
+                            <Route path="/blog" component={Posts} />
+                            <Route path="/:page" component={(props) => <Page key={window.location.pathname} />} />
+                            <Route path="/" component={(props) => <Page key={"home"} />} />
+                            <Route component={NotFound} />
+                        </Switch>
+                    </PostState>
+                </Router>
+            </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

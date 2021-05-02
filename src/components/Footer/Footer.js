@@ -1,32 +1,40 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 const $ = require('jquery');
 
 
 const Footer = () => {
 
+    const footerRef = useRef();
+
     useEffect(() => {
+        // create webticker instance on page load
+        if (footerRef.current) {
+            $("#webTicker").webTicker({
+                duplicate: true,
+                rssfrequency: 0,
+                startEmpty: false,
+                hoverpause: false,
+                speed: 20,
+                height: "50px",
+            });
+        }
 
     }, [])
 
-    // render userlocaldatetime component to header
-    if (document.getElementById("current-date")) {
-        render(<UserLocalDateTime />, document.getElementById("current-date"));
+    const randColor = () => {
+        let colorArr = ['red', 'green', 'blue', 'yellow', ]
+        let rand = Math.floor(Math.random() * colorArr.length);
+        return colorArr[rand]
     }
-    // create webticker instance on page load
-    if (document.getElementById("ticker")) {
-        $("#webTicker").webTicker({
-            duplicate: true,
-            rssfrequency: 0,
-            startEmpty: false,
-            hoverpause: false,
-            speed: 20,
-            height: "50px",
-        });
+
+    let style = {
+        backgroundColor: randColor()
     }
+
 
     // watch for window resize
 
-    if (document.getElementById("ticker")) {
+    if (footerRef.current) {
         $(window).resize(() => {
             $("#webTicker").webTicker("stop");
             clearTimeout(window.resizedFinished);
@@ -37,13 +45,14 @@ const Footer = () => {
     }
 
     return (
-        <div>
+        <footer ref={footerRef} style={style} id="footer">
             <div id="ticker">
                 <ul id="webTicker">
-                    <li>Publishing for the New Age</li>
+                    <li>If to be Unbound is to be:released, liberated, unfastened::to live an Unbound life is to
+                            live:in radical togetherness</li>
                 </ul>
             </div>
-        </div>
+        </footer>
     )
 }
 
