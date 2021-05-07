@@ -3,17 +3,48 @@ header#header {
     justify-content: space-between;
     margin: 0 auto;
 
-    div ul#menu-main-menu li a{
-        font-family: Martin;
-        font-size: 3rem;
-        text-decoration: none;
-        color: black;
+    div ul#menu-main-menu {
+        display: flex;
+
+        li {
+            margin: 0 25px;
+        }
+        a {
+            font-family: Martin;
+            font-size: 3rem;
+            text-decoration: none;
+            color: black;
+        }
+        
+    }
+    
+    div#hamburger {
+        display: none;
+        transition: .1s linear all;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        div.patty {
+            width: 50px;
+            background-color: black;
+            margin: 10px;
+            height: 5px;
+
+        }
     }
 
     div h1 {
         font-size: 5rem;
     }
+
+
 }
+
 
 
 

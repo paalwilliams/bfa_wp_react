@@ -22,7 +22,7 @@ const Footer = () => {
     }, [])
 
     const randColor = () => {
-        let colorArr = ['red', 'green', 'blue', 'yellow', ]
+        let colorArr = ['#FF0000', '#00FF00', '#0000FF']
         let rand = Math.floor(Math.random() * colorArr.length);
         return colorArr[rand]
     }

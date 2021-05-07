@@ -1,36 +1,38 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Redirect } from 'react-router-dom'
 import Utils from '../../utils/Utils'
 import PostContext from '../../context/posts/postContext'
 import Loading from '../../components/Utils/Loading'
 const { React, useEffect, useContext } = wp.element
 
 const Page = () => {
-  const { page } = useParams()
-  const postContext = useContext(PostContext)
+    const { page } = useParams()
+    const postContext = useContext(PostContext)
 
-  const { getSinglePage, state, getFrontPage } = postContext
+    const { getSinglePage, state, getFrontPage, pageStateDebounce } = postContext
 
-  useEffect(() => {
-      page ? getSinglePage(page) : getFrontPage()
-  }, [])
+    useEffect(() => {
+        pageStateDebounce().then(() => {
+            page !== '404' && page ? getSinglePage(page) : getFrontPage();
+        })
+    }, [])
 
-  if (state.page) {
-    if (state.identity) {
-      document.title = `${state.page.title.rendered} | ${state.identity.name}`
-    }
-    return (
-        <div>
-            <h2 className="page-title">{state.page.title.rendered}</h2>
-            <div dangerouslySetInnerHTML={Utils.createMarkup(state.page.content.rendered)}>
+    if (state.page) {
+        if (state.identity) {
+            document.title = `${state.page.title.rendered} | ${state.identity.name}`
+        }
+        return (
+            <div>
+                {/* <h2 className="page-title">{state.page.title.rendered}</h2> */}
+                <div dangerouslySetInnerHTML={Utils.createMarkup(state.page.content.rendered)}>
 
+                </div>
             </div>
-        </div>
-    )
-  } else {
-    return (
-          <Loading />
-    )
-  }
+        )
+    } else {
+        return (
+            <Loading />
+        )
+    }
 }
 
 export default Page
