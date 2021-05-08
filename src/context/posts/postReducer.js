@@ -5,7 +5,8 @@ import {
     GET_MENU,
     ERROR,
     GET_SITE_IDENTITY,
-    CLEAR_PAGE
+    CLEAR_PAGE,
+    TOGGLE_HAMBURGER
 } from '../types'
 
 export default (state, action) => {
@@ -36,6 +37,11 @@ export default (state, action) => {
                 ...action.payload
             }
         case CLEAR_PAGE:
+            return {
+                ...state,
+                ...action.payload
+            }
+        case TOGGLE_HAMBURGER:
             return {
                 ...state,
                 ...action.payload

@@ -2,7 +2,7 @@ import PostContext from '../../context/posts/postContext'
 import { Link } from 'react-router-dom'
 const { React, useEffect, useContext, useRef } = wp.element
 
-const Menu = () => {
+const MobileMenu = () => {
     const postContext = useContext(PostContext)
 
     const { getMenu, state } = postContext
@@ -42,4 +42,4 @@ const Menu = () => {
     )
 }
 
-export default Menu
+export default MobileMenu

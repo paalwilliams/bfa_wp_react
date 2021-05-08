@@ -50,6 +50,14 @@ const Footer = () => {
                 <ul id="webTicker">
                     <li>If to be Unbound is to be:released, liberated, unfastened::to live an Unbound life is to
                             live:in radical togetherness</li>
+                    <li>If to be Unbound is to be:released, liberated, unfastened::to live an Unbound life is to
+                            live:in radical togetherness</li>
+                    <li>If to be Unbound is to be:released, liberated, unfastened::to live an Unbound life is to
+                            live:in radical togetherness</li>
+                    <li>If to be Unbound is to be:released, liberated, unfastened::to live an Unbound life is to
+                            live:in radical togetherness</li>
+                    <li>If to be Unbound is to be:released, liberated, unfastened::to live an Unbound life is to
+                            live:in radical togetherness</li>
                 </ul>
             </div>
         </footer>
